@@ -19,12 +19,12 @@
    <!-- ********************************************** -->
 
    <groupId>com.bernardomg.example</groupId>
-   <artifactId>maven-executable-jar-example</artifactId>
+   <artifactId>spring-boot-executable-jar-example</artifactId>
    <version>1.1.0-SNAPSHOT</version>
    <packaging>jar</packaging>
 
-   <name>Maven Executable JAR Example</name>
-   <description>An example for setting up an executable JAR</description>
+   <name>Spring Boot Executable JAR Example</name>
+   <description>An example for setting up an executable JAR with Spring Boot</description>
    <url>https://github.com/bernardo-mg/command-line-executable-jar</url>
    <inceptionYear>2020</inceptionYear>
 

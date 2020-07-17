@@ -1,4 +1,4 @@
-# Maven Executable JAR Example
+# Spring Boot Executable JAR Example
 
 Sets up an executable JAR through Maven. All the configuration is applied in the POM, and the included Main class will be executed.
 
