@@ -177,12 +177,13 @@
       <guava.version>29.0-jre</guava.version>
       <junit.jupiter.version>5.6.2</junit.jupiter.version>
       <mockito.version>3.3.3</mockito.version>
+      <spring.boot.version>2.3.1.RELEASE</spring.boot.version>
       <log4j.version>2.13.3</log4j.version>
       <slf4j.version>1.7.30</slf4j.version>
       <!-- ============================================== -->
       <!-- ============== PLUGINS VERSIONS ============== -->
       <!-- ============================================== -->
-      <plugin.shade.version>3.2.4</plugin.shade.version>
+      <plugin.spring.boot.version>${spring.boot.version}</plugin.spring.boot.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
@@ -190,7 +191,7 @@
       <!-- ============================================== -->
       <!-- ================= EXECUTABLE ================= -->
       <!-- ============================================== -->
-      <main.path>com.bernardomg.example.maven.execjar.Main</main.path>
+      <main.path>com.bernardomg.example.spring.execjar.Main</main.path>
       <exec.file.name>executable</exec.file.name>
    </properties>
 
@@ -200,6 +201,14 @@
 
    <dependencyManagement>
       <dependencies>
+          <!-- <dependency>-->
+            <!-- Spring Boot -->
+            <!-- <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>${spring.boot.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency> -->
          <dependency>
             <!-- JUnit BOM -->
             <groupId>org.junit</groupId>
@@ -272,10 +281,10 @@
       <pluginManagement>
          <plugins>
             <plugin>
-               <!-- Shade -->
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-shade-plugin</artifactId>
-               <version>${plugin.shade.version}</version>
+               <!-- Spring Boot -->
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-maven-plugin</artifactId>
+               <version>${plugin.spring.boot.version}</version>
             </plugin>
          </plugins>
       </pluginManagement>
@@ -308,52 +317,6 @@
             </executions>
          </plugin>
          <plugin>
-            <!-- Jar -->
-            <!-- Generates the JAR package. -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <configuration>
-               <archive>
-                  <index>true</index>
-                  <manifest>
-                     <addClasspath>true</addClasspath>
-                     <mainClass>${main.path}</mainClass>
-                  </manifest>
-               </archive>
-            </configuration>
-         </plugin>
-         <plugin>
-            <!-- Shade -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <executions>
-               <execution>
-                  <goals>
-                     <goal>shade</goal>
-                  </goals>
-                  <configuration>
-                     <finalName>${exec.file.name}</finalName>
-                     <shadedArtifactAttached>true</shadedArtifactAttached>
-                     <transformers>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                           <mainClass>${main.path}</mainClass>
-                        </transformer>
-                     </transformers>
-                     <filters>
-                        <filter>
-                           <artifact>*:*</artifact>
-                           <excludes>
-                              <exclude>META-INF/*.SF</exclude>
-                              <exclude>META-INF/*.DSA</exclude>
-                              <exclude>META-INF/*.RSA</exclude>
-                           </excludes>
-                        </filter>
-                     </filters>
-                  </configuration>
-               </execution>
-            </executions>
-         </plugin>
-         <plugin>
             <!-- Site -->
             <!-- Generates the Maven Site -->
             <groupId>org.apache.maven.plugins</groupId>
@@ -366,6 +329,22 @@
                   <version>${site.skin.version}</version>
                </dependency>
             </dependencies>
+         </plugin>
+         <plugin>
+            <!-- Spring Boot -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>repackage</goal>
+                  </goals>
+                  <configuration>
+                     <classifier>spring-boot</classifier>
+                     <mainClass>${main.path}</mainClass>
+                  </configuration>
+               </execution>
+            </executions>
          </plugin>
       </plugins>
    </build>
