@@ -54,7 +54,7 @@
 
    <ciManagement>
       <system>Github Actions</system>
-      <url>https://github.com/Bernardo-MG/maven-executable-jar-example/actions</url>
+      <url>https://github.com/Bernardo-MG/spring-boot-executable-jar-example/actions</url>
       <notifiers />
    </ciManagement>
 
