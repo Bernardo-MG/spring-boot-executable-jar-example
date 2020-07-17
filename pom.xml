@@ -201,14 +201,6 @@
 
    <dependencyManagement>
       <dependencies>
-          <!-- <dependency>-->
-            <!-- Spring Boot -->
-            <!-- <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-dependencies</artifactId>
-            <version>${spring.boot.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-         </dependency> -->
          <dependency>
             <!-- JUnit BOM -->
             <groupId>org.junit</groupId>
@@ -278,6 +270,7 @@
 
    <build>
       <defaultGoal>clean package install</defaultGoal>
+      <finalName>${exec.file.name}</finalName>
       <pluginManagement>
          <plugins>
             <plugin>
