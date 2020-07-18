@@ -11,7 +11,7 @@ mvn clean package
 Afterwards the jar will be in the target folder. It can be run as any runnable jar:
 
 ```
-java -jar target/executable-spring-boot.jar
+java -jar target/executable.jar
 ```
 
 All it does is printing to the log.
