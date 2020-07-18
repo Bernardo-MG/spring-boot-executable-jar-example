@@ -10,7 +10,10 @@
                 First release of the example.
             </action>
         </release>
-        <release version="1.1.0" date="2020-07-17" description="">
+        <release version="1.0.1" date="2020-07-18" description="Corrected name">
+            <action dev="bmg" type="update">
+                The executable receives the correct name.
+            </action>
         </release>
     </body>
 </document>
