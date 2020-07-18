@@ -8,7 +8,7 @@ To test the project first package it:
 mvn clean package
 ```
 
-Afterwards the jar will be in the target folder. It can be run as any runnable jar:
+Afterwards a runnable jar will be in the target folder. It can be run like this:
 
 ```
 java -jar target/executable-spring-boot.jar
