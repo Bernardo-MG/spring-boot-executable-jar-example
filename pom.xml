@@ -123,11 +123,8 @@
       <!-- =========== DEPENDENCIES VERSIONS ============ -->
       <!-- ============================================== -->
       <guava.version>29.0-jre</guava.version>
-      <junit.jupiter.version>5.6.2</junit.jupiter.version>
-      <mockito.version>3.3.3</mockito.version>
-      <spring.boot.version>2.3.1.RELEASE</spring.boot.version>
-      <log4j.version>2.13.3</log4j.version>
-      <slf4j.version>1.7.30</slf4j.version>
+      <junit.jupiter.version>5.9.1</junit.jupiter.version>
+      <spring.boot.version>2.7.7</spring.boot.version>
       <!-- ============================================== -->
       <!-- ============ PLUGIN CONFIGURATION ============ -->
       <!-- ============================================== -->
@@ -157,6 +154,14 @@
    <dependencyManagement>
       <dependencies>
          <dependency>
+            <!-- Spring Boot Dependencies BOM -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>${spring.boot.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
+         <dependency>
             <!-- JUnit BOM -->
             <groupId>org.junit</groupId>
             <artifactId>junit-bom</artifactId>
@@ -181,19 +186,16 @@
          <!-- SLF4J API -->
          <groupId>org.slf4j</groupId>
          <artifactId>slf4j-api</artifactId>
-         <version>${slf4j.version}</version>
       </dependency>
       <dependency>
          <!-- Log4j SLF4J Bridge -->
          <groupId>org.apache.logging.log4j</groupId>
          <artifactId>log4j-slf4j-impl</artifactId>
-         <version>${log4j.version}</version>
       </dependency>
       <dependency>
          <!-- Log4j core -->
          <groupId>org.apache.logging.log4j</groupId>
          <artifactId>log4j-core</artifactId>
-         <version>${log4j.version}</version>
       </dependency>
       <!-- ============================================== -->
       <!-- ======= TEST ENVIRONMENT DEPENDENCIES ======== -->
@@ -214,7 +216,6 @@
          <!-- Mockito -->
          <groupId>org.mockito</groupId>
          <artifactId>mockito-core</artifactId>
-         <version>${mockito.version}</version>
          <scope>test</scope>
       </dependency>
    </dependencies>
