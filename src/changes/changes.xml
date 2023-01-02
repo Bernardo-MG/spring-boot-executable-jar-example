@@ -15,7 +15,10 @@
                 The executable receives the correct name.
             </action>
         </release>
-        <release version="1.1.0" date="2020-07-18" description="">
+        <release version="1.0.2" date="2023-01-02" description="Updated dependencies">
+            <action dev="bmg" type="update">
+                Updated dependencies.
+            </action>
         </release>
     </body>
 </document>
