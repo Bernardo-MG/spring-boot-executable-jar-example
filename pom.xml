@@ -122,7 +122,6 @@
       <!-- ============================================== -->
       <!-- =========== DEPENDENCIES VERSIONS ============ -->
       <!-- ============================================== -->
-      <guava.version>29.0-jre</guava.version>
       <junit.jupiter.version>5.9.1</junit.jupiter.version>
       <spring.boot.version>2.7.7</spring.boot.version>
       <!-- ============================================== -->
@@ -173,12 +172,6 @@
    </dependencyManagement>
 
    <dependencies>
-      <dependency>
-         <!-- Guava -->
-         <groupId>com.google.guava</groupId>
-         <artifactId>guava</artifactId>
-         <version>${guava.version}</version>
-      </dependency>
       <!-- ============================================== -->
       <!-- ================== LOGGERS =================== -->
       <!-- ============================================== -->
