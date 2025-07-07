@@ -1,7 +1,8 @@
 
 package com.bernardomg.example.spring.execjar;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Main entry. This is what makes the project executable.
@@ -11,8 +12,12 @@ import lombok.extern.slf4j.Slf4j;
  * @author Bernardo Mart&iacute;nez Garrido
  *
  */
-@Slf4j
 public class Main {
+
+    /**
+     * Logger for the class.
+     */
+    private static final Logger log = LoggerFactory.getLogger(Main.class);
 
     /**
      * Main method. This will be executed when running th project.
