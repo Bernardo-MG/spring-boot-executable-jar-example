@@ -11,7 +11,7 @@
    <parent>
       <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.5.3</version>
+      <version>1.5.11</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -122,8 +122,8 @@
       <!-- ============================================== -->
       <!-- =========== DEPENDENCIES VERSIONS ============ -->
       <!-- ============================================== -->
-      <junit.jupiter.version>5.9.1</junit.jupiter.version>
-      <spring.boot.version>2.7.7</spring.boot.version>
+      <junit.jupiter.version>5.13.3</junit.jupiter.version>
+      <spring.boot.version>3.5.3</spring.boot.version>
       <!-- ============================================== -->
       <!-- ============ PLUGIN CONFIGURATION ============ -->
       <!-- ============================================== -->
@@ -138,7 +138,7 @@
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>2.3.2</site.skin.version>
+      <site.skin.version>2.4.1</site.skin.version>
       <!-- ============================================== -->
       <!-- ================= EXECUTABLE ================= -->
       <!-- ============================================== -->
@@ -192,7 +192,7 @@
       <dependency>
          <!-- Log4j SLF4J Bridge -->
          <groupId>org.apache.logging.log4j</groupId>
-         <artifactId>log4j-slf4j-impl</artifactId>
+         <artifactId>log4j-slf4j2-impl</artifactId>
       </dependency>
       <dependency>
          <!-- Log4j core -->
